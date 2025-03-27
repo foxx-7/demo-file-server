@@ -1,5 +1,7 @@
-import java.io.*;
-import java.net.*;
+
+import java.net.Serversocket;
+import java.net.Socket;
+
 
 class FileServer{
   public static void main(String[] args){
