@@ -1,5 +1,8 @@
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
 
 class Client{
   public static void main(String[] args){
@@ -15,7 +18,7 @@ class Client{
     try{
       socket = new Socket("127.0.0.1", 8000);
       reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-      writer = new PrintWriter(socket.getOutputStream(), true);
+      writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
         writer.println(args[0]);
         String statusCode = reader.readLine();
         switch(statusCode){
